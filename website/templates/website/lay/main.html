@@ -1,0 +1,19 @@
+<!-- website/lay/main.html -->
+
+{% extends "website/lay/base.html" %}
+{% load static %}
+
+{% block main %}
+
+<div id="colorlib-page">
+
+    {% include "website/inc/nav.html" %}
+    
+    <div id="colorlib-main">
+        {% block content %}{% endblock %}
+    </div>
+</div>
+
+{% endblock %}
+
+<!-- website/lay/main.html -->

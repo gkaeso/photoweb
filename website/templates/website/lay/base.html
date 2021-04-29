@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+
+    <title></title>
+
+    {% include "website/inc/meta.html" %}
+
+    {% include "website/inc/style.html" %}
+</head>
+<body>
+    {% block main %}{% endblock %}
+
+    {% include "website/inc/loader.html" %}
+
+    {% include "website/inc/script.html" %}
+</body>
+</html>
