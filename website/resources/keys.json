@@ -1,0 +1,35 @@
+{
+  "copyright": "Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class=\"icon-heart\" aria-hidden=\"true\"></i> by <a href=\"https://colorlib.com\" target=\"_blank\">Colorlib</a>",
+
+  "author": {
+    "name": "Louie Smith",
+    "greeting": "Hello! I'm",
+    "desc1": "<span>Louie Smith</span> A Photographer. <span>I Capture Life</span>",
+    "desc2": "I am A Photographer from America Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean."
+  },
+
+  "nav": {
+    "menu1": "Home",
+    "menu2": "Collection",
+    "menu3": "About",
+    "menu4": "Services",
+    "menu5": "Blog",
+    "menu6": "Contact",
+    "menu7": "Newsletter"
+  },
+
+  "follow": {
+    "header": "follow me on instagram"
+  },
+
+  "footer": {
+    "header1": "recent photos",
+    "header2": "archives",
+    "header3": "have a question?"
+  },
+
+  "home": {
+    "title": "home"
+  }
+
+}

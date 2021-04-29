@@ -35,20 +35,20 @@
     <div id="colorlib-page">
         <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
         <aside id="colorlib-aside" role="complementary" class="js-fullheight text-center">
-            <h1 id="colorlib-logo"><a href="#"><span class="img" style="background-image: url({% static 'photoweb/images/author.jpg' %});"></span>Louie Smith</a></h1>
+            <h1 id="colorlib-logo"><a href="#"><span class="img" style="background-image: url({% static 'photoweb/images/author.jpg' %});"></span>{{ keys.nav.header }}</a></h1>
             <nav id="colorlib-main-menu" role="navigation">
                 <ul>
-                    <li class="colorlib-active"><a href="index.html">Home</a></li>
-                    <li><a href="#">Collection</a></li>
-                    <li><a href="#">About Me</a></li>
-                    <li><a href="#">My Services</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li class="colorlib-active"><a href="index.html">{{ keys.author.name }}</a></li>
+                    <li><a href="#">{{ keys.nav.menu2 }}</a></li>
+                    <li><a href="#">{{ keys.nav.menu3 }}</a></li>
+                    <li><a href="#">{{ keys.nav.menu4 }}</a></li>
+                    <li><a href="#">{{ keys.nav.menu5 }}</a></li>
+                    <li><a href="#">{{ keys.nav.menu6 }}</a></li>
                 </ul>
             </nav>
 
             <div class="colorlib-footer">
-                <h3>Newsletter</h3>
+                <h3>{{ keys.nav.menu7 }}</h3>
                 <div class="d-flex justify-content-center">
                     <form action="#" class="colorlib-subscribe-form">
             <div class="form-group d-flex">
@@ -75,11 +75,11 @@
                         </div>
                         <div class="author-info text p-3 p-md-5">
                             <div class="desc">
-                                <span class="subheading">Hello! I'm</span>
-                                <h1 class="big-letter">Louie Smith</h1>
-                                <h1 class="mb-4"><span>Louie Smith</span> A Photographer. <span>I Capture Life</span></h1>
-                                <p class="mb-4">I am A Photographer from America Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                                <h3 class="signature h1">Louie Smith</h3>
+                                <span class="subheading">{{ keys.author.greeting }}</span>
+                                <h1 class="big-letter">{{ keys.author.name }}</h1>
+                                <h1 class="mb-4">{{ keys.author.desc1 | safe }}</h1>
+                                <p class="mb-4">{{ keys.author.desc2 }}</p>
+                                <h3 class="signature h1">{{ keys.author.name }}</h3>
                                 <ul class="ftco-social mt-3">
                       <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
                       <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
@@ -94,7 +94,7 @@
                 <div class="container">
                     <div class="row justify-content-center mb-2 pb-3">
                         <div class="col-md-7 heading-section heading-section-2 text-center ftco-animate">
-                            <h2 class="mb-4">FOLLOW ME ON INSTAGRAM</h2>
+                            <h2 class="mb-4">{{ keys.follow.header }}</h2>
                         </div>
                     </div>
                     <div class="row no-gutters">
@@ -141,7 +141,7 @@
                     <div class="row mb-5">
                         <div class="col-md">
                             <div class="ftco-footer-widget mb-4 ml-md-4">
-                                <h2 class="ftco-heading-2">RECENT PHOTOS</h2>
+                                <h2 class="ftco-heading-2">{{ keys.footer.header1 }}</h2>
                                 <ul class="list-unstyled photo">
                                     <li><a href="#" class="img" style="background-image: url({% static 'photoweb/images/image_1.jpg' %});"></a></li>
                                     <li><a href="#" class="img" style="background-image: url({% static 'photoweb/images/image_2.jpg' %});"></a></li>
@@ -154,7 +154,7 @@
                         </div>
                         <div class="col-md">
                             <div class="ftco-footer-widget mb-4">
-                                <h2 class="ftco-heading-2">ARCHIVES</h2>
+                                <h2 class="ftco-heading-2">{{ keys.footer.header2 }}</h2>
                                 <ul class="list-unstyled categories">
                                     <li><a href="#">November 2018 <span>(105)</span></a></li>
                                     <li><a href="#">October 2018 <span>(212)</span></a></li>
@@ -166,7 +166,7 @@
                         </div>
                         <div class="col-md">
                             <div class="ftco-footer-widget mb-4">
-                                <h2 class="ftco-heading-2">HAVE A QUESTIONS?</h2>
+                                <h2 class="ftco-heading-2">{{ keys.footer.header3 }}</h2>
                                 <div class="block-23 mb-3">
                                     <ul>
                                         <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
@@ -179,8 +179,9 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                            <p>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                {{ keys.copyright | safe }}                                
                                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                             </p>
                         </div>
