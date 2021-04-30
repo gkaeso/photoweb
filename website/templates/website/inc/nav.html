@@ -1,6 +1,7 @@
 <!-- website/inc/nav.html -->
 
 {% load static %}
+{% load website_tags %}
 
 <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
 
@@ -10,8 +11,8 @@
     
     <nav id="colorlib-main-menu" role="navigation">
         <ul>
-            <li class="colorlib-active"><a href="{% url 'website:index' %}">{{ keys.nav.menu1 }}</a></li>
-            <li><a href="{% url 'website:portfolio' %}">{{ keys.nav.menu2 }}</a></li>
+            <li class="{% active_page request 'index' %}"><a href="{% url 'website:index' %}">{{ keys.nav.menu1 }}</a></li>
+            <li class="{% active_page request 'portfolio' %}"><a href="{% url 'website:portfolio' %}">{{ keys.nav.menu2 }}</a></li>
             <li><a href="#">{{ keys.nav.menu3 }}</a></li>
             <li><a href="#">{{ keys.nav.menu4 }}</a></li>
             <li><a href="#">{{ keys.nav.menu5 }}</a></li>
