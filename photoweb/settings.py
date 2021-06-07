@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
+import os.path
 
 from pathlib import Path
 
@@ -128,3 +129,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_DIRS = (                                                                                                                                                     
     'website/static',
 )
+
+# Media
+
+# Base url to serve media files
+MEDIA_URL = '/media/'
+
+# Path where media is stored
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
