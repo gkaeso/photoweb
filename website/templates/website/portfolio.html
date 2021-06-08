@@ -24,43 +24,26 @@
 
             <div class="col-lg-8">
                 <div class="row">
+                    {% for collection in collections %}
                     <div class="col-md-12">
                         <div class="blog-entry ftco-animate d-md-flex">
-                            <a href="single.html" class="img img-2" style="background-image: url({% static 'photoweb/images/image_1.jpg' %});"></a>
+                            <a href="single.html" class="img img-2" style="background-image: url({{ collection.ref_photo }})"></a>
                             <div class="text text-2 p-4">
-                                <h3 class="mb-2"><a href="single.html">Collection 1</a></h3>
+                                <h3 class="mb-2"><a href="single.html">{{ collection.title }}</a></h3>
                                 <div class="meta-wrap">
                                     <p class="meta">
-                                        <span>Dec 2018</span>
-                                        <span>5 Photos</span>
+                                        <span>{{ collection.dt_publish }}</span>
+                                        <span>{{ collection.count }} {% if collection.count > 1 %}Photos{% else %}Photo{% endif %}</span>
                                         <br/>
-                                        <span><a href="single.html">Model's Name</a></span>
+                                        <span><a href="single.html">{{ collection.subtitle }}</a></span>
                                     </p>
                                 </div>
-                                <p class="mb-4">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                                <p class="mb-4">{{ collection.description }}</p>
                                 <p><a href="#" class="btn-custom">Read More <span class="ion-ios-arrow-forward"></span></a></p>
                             </div>
                         </div>
                     </div>
-
-                    <div class="col-md-12">
-                        <div class="blog-entry ftco-animate d-md-flex">
-                            <a href="single.html" class="img img-2" style="background-image: url({% static 'photoweb/images/image_2.jpg' %});"></a>
-                            <div class="text text-2 p-4">
-                                <h3 class="mb-2"><a href="single.html">Collection 2</a></h3>
-                                <div class="meta-wrap">
-                                    <p class="meta">
-                                        <span>Dec 2018</span>
-                                        <span>5 Photos</span>
-                                        <br/>
-                                        <span><a href="single.html">Model's Name</a></span>
-                                    </p>
-                                </div>
-                                <p class="mb-4">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-                                <p><a href="#" class="btn-custom">Read More <span class="ion-ios-arrow-forward"></span></a></p>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
                 
                 <div class="row">
