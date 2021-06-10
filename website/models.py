@@ -12,6 +12,7 @@ def rename_and_upload(instance, filename) -> str:
 
 class Photo(models.Model):
     image = models.FileField(upload_to=rename_and_upload)
+    title = models.CharField(max_length=100, default=None, blank=True, null=True)
     dt_shot = models.DateField(default=None, blank=True, null=True)
 
     def __str__(self):

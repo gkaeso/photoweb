@@ -27,19 +27,19 @@
                     {% for collection in collections %}
                     <div class="col-md-12">
                         <div class="blog-entry ftco-animate d-md-flex">
-                            <a href="single.html" class="img img-2" style="background-image: url({{ collection.ref_photo }})"></a>
+                            <a href="{% url 'website:album' collection.id %}" class="img img-2" style="background-image: url({{ collection.ref_photo }});"></a>
                             <div class="text text-2 p-4">
-                                <h3 class="mb-2"><a href="single.html">{{ collection.title }}</a></h3>
+                                <h3 class="mb-2"><a href="{% url 'website:album' collection.id %}">{{ collection.title }}</a></h3>
                                 <div class="meta-wrap">
                                     <p class="meta">
                                         <span>{{ collection.dt_publish }}</span>
                                         <span>{{ collection.count }} {% if collection.count > 1 %}Photos{% else %}Photo{% endif %}</span>
                                         <br/>
-                                        <span><a href="single.html">{{ collection.subtitle }}</a></span>
+                                        <span><a href="{% url 'website:album' collection.id %}">{{ collection.subtitle }}</a></span>
                                     </p>
                                 </div>
                                 <p class="mb-4">{{ collection.description }}</p>
-                                <p><a href="#" class="btn-custom">Read More <span class="ion-ios-arrow-forward"></span></a></p>
+                                <p><a href="{% url 'website:album' collection.id %}" class="btn-custom">Read More <span class="ion-ios-arrow-forward"></span></a></p>
                             </div>
                         </div>
                     </div>

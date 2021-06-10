@@ -10,6 +10,7 @@ app_name = 'website'
 urlpatterns = [
     path('', views.index, name='index'),
     path('portfolio/', views.portfolio, name='portfolio'),
+    path('album/<int:album_id>/', views.album, name='album'),
 ]
 
 if settings.DEBUG:

@@ -1,0 +1,41 @@
+<!-- website/album.html -->
+
+{% extends "website/lay/main.html" %}
+{% load static %}
+
+{% block content %}
+
+<section class="ftco-section ftco-bread">
+    <div class="container">
+    <div class="row no-gutters slider-text justify-content-center align-items-center">
+        <div class="col-md-8 ftco-animate">
+            <p class="breadcrumbs"><span class="mr-2"><a href="{% url 'website:index' %}">{{ keys.nav.menu1 }}</a></span>&nbsp;<span>{{ keys.nav.menu2 }}</span></p>
+            <h1 class="bread">{{ album_title }}</h1>
+        </div>
+    </div>
+</div>
+</section>
+
+<section class="ftco-section-3">
+    <div class="photograhy">
+        <div class="row">
+            {% for photo_detail in photo_details %}
+            <div class="col-md-4 ftco-animate">
+                <a href="" class="photography-entry img image-popup d-flex justify-content-start align-items-end" style="background-image: url({{ photo_detail.url }});">
+                    <div class="overlay"></div>
+                    <div class="text ml-4 mb-4">
+                        <h3>{{ photo_detail.title }}</h3>
+                        <span class="tag">Model</span>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% include "website/inc/footer.html" %}
+
+{% endblock %}
+
+<!-- website/album.html -->
