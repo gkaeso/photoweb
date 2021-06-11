@@ -24,7 +24,7 @@
 
             <div class="col-lg-8">
                 <div class="row">
-                    {% for collection in collections %}
+                    {% for collection in page_obj %}
                     <div class="col-md-12">
                         <div class="blog-entry ftco-animate d-md-flex">
                             <a href="{% url 'website:album' collection.id %}" class="img img-2" style="background-image: url({{ collection.ref_photo }});"></a>
@@ -33,7 +33,7 @@
                                 <div class="meta-wrap">
                                     <p class="meta">
                                         <span>{{ collection.dt_publish }}</span>
-                                        <span>{{ collection.count }} {% if collection.count > 1 %}{{ keys.page.portfolio.collection.count_label2 }}{% else %}{ keys.page.portfolio.collection.count_label1 }}{% endif %}</span>
+                                        <span>{{ collection.count }} {% if collection.count > 1 %}{{ keys.page.portfolio.collection.count_label2 }}{% else %}{{ keys.page.portfolio.collection.count_label1 }}{% endif %}</span>
                                         <br/>
                                         <span><a href="{% url 'website:album' collection.id %}">{{ collection.subtitle }}</a></span>
                                     </p>
@@ -50,13 +50,31 @@
                     <div class="col">
                         <div class="block-27">
                             <ul>
-                                <li><a href="#">&lt;</a></li>
-                                <li class="active"><span>1</span></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li>
-                                <li><a href="#">&gt;</a></li>
+                                {% if page_obj.has_previous %}
+                                <li><a href="?page={{ page_obj.previous_page_number }}">&lt;</a></li>
+
+                                {% with page_obj.number|add:"-2" as previous_previous_page %}
+                                {% if previous_previous_page >= 1 %}
+                                <li><a href="?page={{ previous_previous_page }}">{{ previous_previous_page }}</a></li>
+                                {% endif %}
+                                {% endwith %}
+
+                                <li><a href="?page={{ page_obj.previous_page_number }}">{{ page_obj.previous_page_number }}</a></li>
+                                {% endif %}
+
+                                <li class="active"><span>{{ page_obj.number }}</span></li>
+
+                                {% if page_obj.has_next %}
+                                <li><a href="?page={{ page_obj.next_page_number }}">{{ page_obj.next_page_number }}</a></li>
+
+                                {% with page_obj.number|add:"2" as next_next_page %}
+                                {% if next_next_page <= page_obj.paginator.num_pages %}
+                                <li><a href="?page={{ next_next_page }}">{{ next_next_page }}</a></li>
+                                {% endif %}
+                                {% endwith %}
+
+                                <li><a href="?page={{ page_obj.next_page_number }}">&gt;</a></li>
+                                {% endif %}
                             </ul>
                         </div>
                     </div>

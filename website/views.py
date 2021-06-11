@@ -1,7 +1,8 @@
+from django.core.paginator import Paginator
 from django.shortcuts import render
 
 from .models import AlbumPhoto, PhotoTag
-from .resources import KEYS
+from .resources import KEYS, CONFIG
 from .wrappers import AlbumDetail, PhotoDetail
 
 
@@ -27,7 +28,10 @@ def portfolio(request):
             )
         )
 
-    return render(request, 'website/portfolio.html', {"keys": KEYS, "collections": album_details})
+    paginator = Paginator(album_details, CONFIG["page.portfolio.pagination.size"])
+    page_number = request.GET.get('page')
+
+    return render(request, 'website/portfolio.html', {"keys": KEYS, "page_obj": paginator.get_page(page_number)})
 
 
 def album(request, album_id):
