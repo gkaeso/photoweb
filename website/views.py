@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from .models import AlbumPhoto
+from .models import AlbumPhoto, PhotoTag
 from .resources import KEYS
 from .wrappers import AlbumDetail, PhotoDetail
 
@@ -35,12 +35,14 @@ def album(request, album_id):
 
     album_photos = AlbumPhoto.objects.select_related('photo', 'album').filter(album=album_id)
     for ap in album_photos:
+        photo_tags = PhotoTag.objects.select_related('photo', 'tag').filter(photo=ap.photo)
+        tags = ", ".join([str(photo_tag.tag) for photo_tag in photo_tags])
         photo_details.append(
             PhotoDetail(
                 id=ap.photo.id,
                 url=ap.photo.image.url,
                 title=ap.photo.title,
-                model=ap.photo.model,
+                tags=tags,
                 dt_shot=ap.photo.dt_shot,
             )
         )

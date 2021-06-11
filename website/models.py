@@ -13,7 +13,6 @@ def rename_and_upload(instance, filename) -> str:
 class Photo(models.Model):
     image = models.FileField(upload_to=rename_and_upload)
     title = models.CharField(max_length=50, default=None, blank=True, null=True)
-    model = models.CharField(max_length=50, default=None, blank=True, null=True)
     dt_shot = models.DateField(default=None, blank=True, null=True)
 
     def __str__(self):
@@ -37,3 +36,18 @@ class AlbumPhoto(models.Model):
 
     def __str__(self):
         return f'{self.album} - {self.photo}'
+
+
+class Tag(models.Model):
+    name = models.CharField(max_length=50, default="Default", blank=False, null=False)
+
+    def __str__(self):
+        return self.name
+
+
+class PhotoTag(models.Model):
+    photo = models.ForeignKey(Photo, on_delete=models.CASCADE)
+    tag = models.ForeignKey(Tag, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f'{self.photo} - {self.tag}'

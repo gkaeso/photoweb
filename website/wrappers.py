@@ -19,5 +19,5 @@ class PhotoDetail:
     id: int
     url: str
     title: str
-    model: str
+    tags: str
     dt_shot: datetime.date
