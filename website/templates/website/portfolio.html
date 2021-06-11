@@ -33,13 +33,13 @@
                                 <div class="meta-wrap">
                                     <p class="meta">
                                         <span>{{ collection.dt_publish }}</span>
-                                        <span>{{ collection.count }} {% if collection.count > 1 %}Photos{% else %}Photo{% endif %}</span>
+                                        <span>{{ collection.count }} {% if collection.count > 1 %}{{ keys.page.portfolio.collection.count_label2 }}{% else %}{ keys.page.portfolio.collection.count_label1 }}{% endif %}</span>
                                         <br/>
                                         <span><a href="{% url 'website:album' collection.id %}">{{ collection.subtitle }}</a></span>
                                     </p>
                                 </div>
                                 <p class="mb-4">{{ collection.description }}</p>
-                                <p><a href="{% url 'website:album' collection.id %}" class="btn-custom">Read More <span class="ion-ios-arrow-forward"></span></a></p>
+                                <p><a href="{% url 'website:album' collection.id %}" class="btn-custom">{{ keys.page.portfolio.collection.link_label }} <span class="ion-ios-arrow-forward"></span></a></p>
                             </div>
                         </div>
                     </div>

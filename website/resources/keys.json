@@ -35,6 +35,13 @@
     "copyright": "Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class=\"icon-heart\" aria-hidden=\"true\"></i> by <a href=\"https://colorlib.com\" target=\"_blank\">Colorlib</a>",
 
     "page": {
+        "portfolio": {
+            "collection": {
+                "count_label1": "Photo",
+                "count_label2": "Photos",
+                "link_label": "See More"
+            }
+        },
         "album": {
             "model_no_name": "Anonymous"
         }

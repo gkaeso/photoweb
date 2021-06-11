@@ -21,7 +21,7 @@
         <div class="row">
             {% for photo_detail in photo_details %}
             <div class="col-md-4 ftco-animate">
-                <a href="" class="photography-entry img image-popup d-flex justify-content-start align-items-end" style="background-image: url({{ photo_detail.url }});">
+                <a href="{{ photo_detail.url }}" class="photography-entry img image-popup d-flex justify-content-start align-items-end" style="background-image: url({{ photo_detail.url }});">
                     <div class="overlay"></div>
                     <div class="text ml-4 mb-4">
                         <h3>{{ photo_detail.title }}</h3>
