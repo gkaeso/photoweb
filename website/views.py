@@ -40,6 +40,7 @@ def album(request, album_id):
                 id=ap.photo.id,
                 url=ap.photo.image.url,
                 title=ap.photo.title,
+                model=ap.photo.model,
                 dt_shot=ap.photo.dt_shot,
             )
         )
